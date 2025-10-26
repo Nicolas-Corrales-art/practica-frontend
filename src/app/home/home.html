@@ -1,3 +1,32 @@
+
+    <h4>Lista de Productos</h4>
+     <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categorias</th>
+                </tr>
+            </thead>
+            <tbody> 
+              
+                <tr *ngFor ="let p of productos">
+                 <td>{{p.nombre}}</td>
+                  <td>{{p.precio}}.bs</td>
+                   <td>{{p.categoria.nombre}}</td>
+                </tr>
+            </tbody>
+         </table>
+          <hr>
+
+       <h4>Agregar nuevo producto</h4>
+       <div class="mb-3">
+       <input [(ngModel)]="nuevoProducto.nombre" class="form-control mb-2" placeholder="Nombre del producto">
+       <input [(ngModel)]="nuevoProducto.precio" class="form-control mb-2" type="number" placeholder="Precio">
+       <input [(ngModel)]="nuevoProducto.categoria_id" class="form-control mb-2" type="number" placeholder="Categoría">
+       <h4>Numeros de las Categorias (1. Electronico)--(2. Hogar)--(3. Deportes) </h4> 
+       <button (click)="crearProducto()" class="btn btn-primary">Guardar</button> 
+       </div>
    <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
